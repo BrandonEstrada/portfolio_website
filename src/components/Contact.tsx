@@ -146,7 +146,7 @@ const Contact: React.FC = () => {
               )}
               
               <div className="form-group">
-                <label htmlFor="name">Name</label>
+                <label htmlFor="from_name">Name</label>
                 <input
                   type="text"
                   id="from_name"
@@ -158,7 +158,7 @@ const Contact: React.FC = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="from_email">Email</label>
                 <input
                   type="email"
                   id="from_email"

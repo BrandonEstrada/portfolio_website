@@ -1,43 +1,51 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      const sections = ['home', 'about', 'featured', 'portfolio', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const sections = ['home', 'about', 'featured', 'portfolio', 'contact'];
+          const scrollPosition = window.scrollY + 100;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-          
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
+          for (const section of sections) {
+            const element = document.getElementById(section);
+            if (element) {
+              const offsetTop = element.offsetTop;
+              const offsetHeight = element.offsetHeight;
+              
+              if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                setActiveSection(section);
+                break;
+              }
+            }
           }
-        }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = useCallback((sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false); // Close mobile menu after clicking
+      setIsMobileMenuOpen(false);
     }
-  };
+  }, []);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  const toggleMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(prev => !prev);
+  }, []);
 
   return (
     <nav className="navbar">
