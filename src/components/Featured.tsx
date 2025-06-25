@@ -15,8 +15,8 @@ const Featured: React.FC = () => {
               <img src="https://via.placeholder.com/600x400/4a90e2/fff?text=E-Commerce+Platform" alt="E-Commerce Platform" />
               <div className="project-overlay">
                 <div className="project-links">
-                  <a href="#" className="btn-primary">Live Demo</a>
-                  <a href="#" className="btn-secondary">View Code</a>
+                  <button className="btn-primary" onClick={() => window.open('https://example.com', '_blank')}>Live Demo</button>
+                  <button className="btn-secondary" onClick={() => window.open('https://github.com/brandonestrada', '_blank')}>View Code</button>
                 </div>
               </div>
             </div>
@@ -43,8 +43,8 @@ const Featured: React.FC = () => {
               <img src="https://via.placeholder.com/400x300/764ba2/fff?text=Task+Manager" alt="Task Management App" />
               <div className="project-overlay">
                 <div className="project-links">
-                  <a href="#" className="btn-primary">Live Demo</a>
-                  <a href="#" className="btn-secondary">View Code</a>
+                  <button className="btn-primary" onClick={() => window.open('https://example.com', '_blank')}>Live Demo</button>
+                  <button className="btn-secondary" onClick={() => window.open('https://github.com/brandonestrada', '_blank')}>View Code</button>
                 </div>
               </div>
             </div>
@@ -69,8 +69,8 @@ const Featured: React.FC = () => {
               <img src="https://via.placeholder.com/400x300/f093fb/fff?text=Weather+App" alt="Weather Dashboard" />
               <div className="project-overlay">
                 <div className="project-links">
-                  <a href="#" className="btn-primary">Live Demo</a>
-                  <a href="#" className="btn-secondary">View Code</a>
+                  <button className="btn-primary" onClick={() => window.open('https://example.com', '_blank')}>Live Demo</button>
+                  <button className="btn-secondary" onClick={() => window.open('https://github.com/brandonestrada', '_blank')}>View Code</button>
                 </div>
               </div>
             </div>
@@ -95,8 +95,8 @@ const Featured: React.FC = () => {
               <img src="https://via.placeholder.com/400x300/2ecc71/fff?text=Portfolio+Site" alt="Portfolio Website" />
               <div className="project-overlay">
                 <div className="project-links">
-                  <a href="#" className="btn-primary">Live Demo</a>
-                  <a href="#" className="btn-secondary">View Code</a>
+                  <button className="btn-primary" onClick={() => window.open('https://example.com', '_blank')}>Live Demo</button>
+                  <button className="btn-secondary" onClick={() => window.open('https://github.com/brandonestrada', '_blank')}>View Code</button>
                 </div>
               </div>
             </div>
