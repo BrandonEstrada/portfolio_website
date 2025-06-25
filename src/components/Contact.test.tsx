@@ -22,12 +22,12 @@ describe('Contact', () => {
   test('renders contact information', () => {
     render(<Contact />);
     
-    expect(screen.getByText('Email')).toBeInTheDocument();
     expect(screen.getByText('brandon@example.com')).toBeInTheDocument();
-    expect(screen.getByText('Location')).toBeInTheDocument();
     expect(screen.getByText('San Francisco, CA')).toBeInTheDocument();
-    expect(screen.getByText('Phone')).toBeInTheDocument();
     expect(screen.getByText('+1 (555) 123-4567')).toBeInTheDocument();
+    expect(screen.getAllByText('Email')).toHaveLength(2); // One in contact info, one in form
+    expect(screen.getByText('Location')).toBeInTheDocument();
+    expect(screen.getByText('Phone')).toBeInTheDocument();
   });
 
   test('renders contact form with all fields', () => {
