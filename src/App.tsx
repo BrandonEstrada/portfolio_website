@@ -1,24 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Featured from './components/Featured';
+import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <main className="main-container">
+        <section id="home" className="section hero-section">
+          <Hero />
+        </section>
+        <section id="about" className="section about-section">
+          <About />
+        </section>
+        <section id="featured" className="section featured-section">
+          <Featured />
+        </section>
+        <section id="portfolio" className="section portfolio-section">
+          <Portfolio />
+        </section>
+        <section id="contact" className="section contact-section">
+          <Contact />
+        </section>
+      </main>
     </div>
   );
 }
