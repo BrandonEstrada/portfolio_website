@@ -35,8 +35,16 @@ const About: React.FC = () => {
                   <li>React & TypeScript</li>
                   <li>HTML5 & CSS3</li>
                   <li>JavaScript (ES6+)</li>
-                  <li>Responsive Design</li>
-                  <li>CSS Frameworks</li>
+                </ul>
+              </div>
+              <div className="skill-category">
+                <h3>Backend</h3>
+                <ul>
+                  <li>Java & Spring</li>
+                  <li>Maven</li>
+                  <li>MySQL</li>
+                  <li>Docker</li>
+                  <li>Kafka</li>
                 </ul>
               </div>
               <div className="skill-category">
@@ -44,21 +52,10 @@ const About: React.FC = () => {
                 <ul>
                   <li>Git & GitHub</li>
                   <li>Node.js</li>
-                  <li>WordPress</li>
-                  <li>jQuery</li>
-                  <li>Build Tools</li>
+                  <li>Splunk</li>
                 </ul>
               </div>
-              <div className="skill-category">
-                <h3>Design</h3>
-                <ul>
-                  <li>UI/UX Principles</li>
-                  <li>Figma</li>
-                  <li>Adobe Creative Suite</li>
-                  <li>Prototyping</li>
-                  <li>User Testing</li>
-                </ul>
-              </div>
+
             </div>
           </div>
         </div>
@@ -69,25 +66,25 @@ const About: React.FC = () => {
             <div className="timeline-item">
               <div className="timeline-marker"></div>
               <div className="timeline-content">
-                <h3>Frontend Developer</h3>
-                <p className="company">Tech Company • 2022 - Present</p>
-                <p>Developing responsive web applications using React and TypeScript. Collaborating with design teams to implement pixel-perfect UI components.</p>
+                <h3>Software Engineer</h3>
+                <p className="company">Hilton • 2024 - Present</p>
+                <p>Backend role supporting applications for the Property team.</p>
               </div>
             </div>
             <div className="timeline-item">
               <div className="timeline-marker"></div>
               <div className="timeline-content">
-                <h3>Web Developer</h3>
-                <p className="company">Digital Agency • 2021 - 2022</p>
-                <p>Built custom WordPress themes and plugins. Worked on various client projects ranging from small business websites to large-scale web applications.</p>
+                <h3>Frontend developer - intern</h3>
+                <p className="company">Hilton • 2022 - 2024</p>
+                <p>Incorporated CRS/PMS feature that went into production for hotels worldwide.</p>
               </div>
             </div>
             <div className="timeline-item">
               <div className="timeline-marker"></div>
               <div className="timeline-content">
-                <h3>Junior Developer</h3>
-                <p className="company">Startup • 2020 - 2021</p>
-                <p>Started my professional journey learning modern web development practices. Focused on HTML, CSS, JavaScript, and jQuery fundamentals.</p>
+                <h3>Full Stack Developer</h3>
+                <p className="company">Kudo Care Medical• 2021 - 2023</p>
+                <p>Started my professional journey. Created a CMS web application for a medical company</p>
               </div>
             </div>
           </div>
