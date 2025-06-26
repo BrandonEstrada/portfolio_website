@@ -587,6 +587,53 @@
   }
 }
 
+/* Landscape mode on mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    height: auto;
+    min-height: 100vh;
+    padding: 80px 15px 20px;
+  }
+  
+  .hero-content {
+    flex-direction: row;
+    gap: 30px;
+    max-height: none;
+    align-items: center;
+  }
+  
+  .profile-image {
+    margin: 0;
+    flex-shrink: 0;
+  }
+  
+  .profile-image img {
+    width: 180px;
+    height: 220px;
+  }
+  
+  .hero-text {
+    padding: 15px;
+    flex: 1;
+  }
+  
+  .hero-text h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .code-snippet {
+    font-size: 11px;
+    padding: 10px;
+  }
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
