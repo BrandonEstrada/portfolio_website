@@ -597,7 +597,7 @@
   
   .hero-content {
     flex-direction: row;
-    gap: 30px;
+    gap: 25px;
     max-height: none;
     align-items: center;
   }
@@ -605,6 +605,7 @@
   .profile-image {
     margin: 0;
     flex-shrink: 0;
+    flex-basis: 55%;
   }
   
   .profile-image img {
@@ -613,24 +614,25 @@
   }
   
   .hero-text {
-    padding: 15px;
-    flex: 1;
+    padding: 12px;
+    flex-basis: 45%;
+    flex-shrink: 1;
   }
   
   .hero-text h1 {
-    font-size: 28px;
-    margin-bottom: 15px;
+    font-size: 24px;
+    margin-bottom: 12px;
   }
   
   .description {
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 15px;
   }
   
   .code-snippet {
-    font-size: 11px;
-    padding: 10px;
+    font-size: 10px;
+    padding: 8px;
   }
 }
 
