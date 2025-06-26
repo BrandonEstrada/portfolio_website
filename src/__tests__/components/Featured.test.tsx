@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Featured from './Featured';
+import Featured from '../../components/Featured';
 
 // Mock window.open
 Object.defineProperty(window, 'open', {

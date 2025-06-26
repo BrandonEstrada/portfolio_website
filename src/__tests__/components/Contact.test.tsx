@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Contact from './Contact';
+import Contact from '../../components/Contact';
 
 // Mock EmailJS
 jest.mock('@emailjs/browser', () => ({

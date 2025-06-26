@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Navbar from './Navbar';
+import Navbar from '../../components/Navbar';
 
 describe('Navbar', () => {
   beforeEach(() => {

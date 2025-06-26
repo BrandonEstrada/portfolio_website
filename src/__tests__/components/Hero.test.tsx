@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Hero from './Hero';
+import Hero from '../../components/Hero';
 
 // Mock window scroll properties
 Object.defineProperty(window, 'scrollY', {
