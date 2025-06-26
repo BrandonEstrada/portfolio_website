@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Hero: React.FC = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Calculate horizontal movement based on scroll position
+  // Move right when scrolling down, left when scrolling up
+  const horizontalOffset = Math.sin(scrollY * 0.002) * 20; // Adjust multiplier for speed/distance
+
   return (
     <div className="hero-content">
-      <div className="profile-image">
-        <img src="https://via.placeholder.com/400x500/333/fff?text=Your+Photo" alt="Profile" />
+      <div 
+        className="profile-emoji"
+        style={{
+          transform: `translateX(${horizontalOffset}px)`,
+          transition: 'transform 0.1s ease-out'
+        }}
+      >
+        <span className="emoji" role="img" aria-label="Brandon's Profile">👨🏽‍💻</span>
       </div>
       <div className="hero-text">
         <h1>&lt;coder&gt;</h1>
