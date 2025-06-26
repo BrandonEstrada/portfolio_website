@@ -217,6 +217,41 @@
   animation: fadeInUp 0.8s ease-out;
 }
 
+/* Profile emoji styling - replacing profile image */
+.profile-emoji {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 500px;
+}
+
+.profile-emoji::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, #81C784, #A5D6A7, #4A90A4, #81C784);
+  border-radius: 20px;
+  z-index: -1;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+.profile-emoji .emoji {
+  font-size: 8rem;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease;
+}
+
+.profile-emoji:hover .emoji {
+  transform: scale(1.1);
+}
+
+/* Legacy profile image styles - keeping for compatibility */
 .profile-image {
   flex-shrink: 0;
   position: relative;
@@ -1390,5 +1425,79 @@ html {
   
   .contact-form-container {
     padding: 25px 15px;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  background: linear-gradient(135deg, #2D3748 0%, #4A5568 100%);
+  color: white;
+  padding: 40px 0 20px;
+  margin-top: 0;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-info p {
+  margin: 5px 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.view-counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #81C784;
+}
+
+.view-icon {
+  font-size: 16px;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  opacity: 0.9;
+}
+
+.footer-links a:hover {
+  color: #81C784;
+  opacity: 1;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-info p,
+  .footer-links a {
+    font-size: 13px;
   }
 }

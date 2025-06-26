@@ -5,6 +5,7 @@ import About from './components/About';
 import Featured from './components/Featured';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Contact />
         </section>
       </main>
+      <Footer />
     </div>
   );
 }
