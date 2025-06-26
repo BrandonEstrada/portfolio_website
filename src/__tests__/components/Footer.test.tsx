@@ -48,7 +48,7 @@ describe('Footer', () => {
     expect(screen.getByText('👁️')).toBeInTheDocument();
   });
 
-  test('renders footer links', () => {
+  test('view counter is positioned in footer links area', () => {
     const mockFetch = global.fetch as jest.MockedFunction<typeof fetch>;
     mockFetch.mockResolvedValueOnce({
       ok: true,
@@ -57,11 +57,10 @@ describe('Footer', () => {
     
     render(<Footer />);
     
-    const githubLink = screen.getByText('GitHub').closest('a');
-    const linkedinLink = screen.getByText('LinkedIn').closest('a');
+    const footerLinks = document.querySelector('.footer-links');
+    const viewCounter = document.querySelector('.view-counter');
     
-    expect(githubLink).toHaveAttribute('href', 'https://github.com/brandonestrada');
-    expect(linkedinLink).toHaveAttribute('href', 'https://linkedin.com/in/brandonestrada');
+    expect(footerLinks).toContainElement(viewCounter);
   });
 
   test('fetches global view count from API', async () => {

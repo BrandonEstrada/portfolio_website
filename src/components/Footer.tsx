@@ -36,21 +36,13 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-info">
-          <p>
-            &copy; {currentYear} Brandon Estrada. All rights reserved.
-            <span className="view-counter">
-              <span className="view-icon">👁️</span>
-              {isLoading ? 'Loading views...' : `Global views: ${viewCount.toLocaleString()}`}
-            </span>
-          </p>
+          <p>&copy; {currentYear} Brandon Estrada. All rights reserved.</p>
         </div>
         <div className="footer-links">
-          <a href="https://github.com/brandonestrada" target="_blank" rel="noopener noreferrer">
-            GitHub
-          </a>
-          <a href="https://linkedin.com/in/brandonestrada" target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
+          <span className="view-counter">
+            <span className="view-icon">👁️</span>
+            {isLoading ? 'Loading views...' : `Global views: ${viewCount.toLocaleString()}`}
+          </span>
         </div>
       </div>
     </footer>
