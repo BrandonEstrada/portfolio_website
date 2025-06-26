@@ -470,7 +470,7 @@
   .hero-section {
     min-height: 100vh;
     height: 100vh;
-    padding: 90px 20px 30px;
+    padding: 120px 20px 30px;
     box-sizing: border-box;
   }
   
@@ -479,8 +479,8 @@
   }
   
   .profile-image img {
-    width: 280px;
-    height: 350px;
+    width: 260px;
+    height: 330px;
   }
   
   .hero-text {
@@ -520,19 +520,19 @@
   .hero-section {
     min-height: 100vh;
     height: 100vh;
-    padding: 90px 15px 20px;
+    padding: 140px 15px 20px;
     box-sizing: border-box;
   }
   
   .hero-content {
     gap: 25px;
-    max-height: calc(100vh - 130px);
+    max-height: calc(100vh - 160px);
     overflow: hidden;
   }
   
   .profile-image img {
-    width: 240px;
-    height: 300px;
+    width: 220px;
+    height: 280px;
   }
   
   .hero-text {
