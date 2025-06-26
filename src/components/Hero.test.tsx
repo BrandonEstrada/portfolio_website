@@ -15,12 +15,12 @@ describe('Hero', () => {
     expect(screen.getByText('<coder>')).toBeInTheDocument();
   });
 
-  test('renders profile emoji', () => {
+  test('renders profile image with alt text', () => {
     render(<Hero />);
     
-    const profileEmoji = screen.getByLabelText("Brandon's Profile");
-    expect(profileEmoji).toBeInTheDocument();
-    expect(profileEmoji).toHaveTextContent('👨🏽‍💻');
+    const profileImage = screen.getByAltText('Profile');
+    expect(profileImage).toBeInTheDocument();
+    expect(profileImage).toHaveAttribute('src', expect.stringContaining('placeholder'));
   });
 
   test('renders description text', () => {
@@ -42,16 +42,16 @@ describe('Hero', () => {
     expect(screen.getByText('jQuery')).toBeInTheDocument();
   });
 
-  test('emoji moves based on scroll position', () => {
+  test('image moves based on scroll position', () => {
     render(<Hero />);
     
-    const profileEmoji = screen.getByLabelText("Brandon's Profile").closest('.profile-emoji');
+    const profileImage = screen.getByAltText('Profile').closest('.profile-image');
     
     // Simulate scroll event
     Object.defineProperty(window, 'scrollY', { value: 100, writable: true });
     fireEvent.scroll(window);
     
     // Check that transform style is applied (just check that it exists)
-    expect(profileEmoji).toHaveStyle(expect.stringContaining('transform: translateX('));
+    expect(profileImage).toHaveStyle(expect.stringContaining('transform: translateX('));
   });
 });
