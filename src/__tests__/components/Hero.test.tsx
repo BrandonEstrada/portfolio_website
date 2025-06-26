@@ -12,7 +12,7 @@ describe('Hero', () => {
   test('renders hero section with main title', () => {
     render(<Hero />);
     
-    expect(screen.getByText('<coder>')).toBeInTheDocument();
+    expect(screen.getByText('Brandon Estrada')).toBeInTheDocument();
   });
 
   test('renders profile image with alt text', () => {
@@ -26,10 +26,9 @@ describe('Hero', () => {
   test('renders description text', () => {
     render(<Hero />);
     
-    expect(screen.getByText(/Front End Developer who focuses on/i)).toBeInTheDocument();
-    expect(screen.getByText(/writing clean, elegant and efficient/i)).toBeInTheDocument();
-    expect(screen.getByText(/code. Love HTML5, CSS3, WordPress/i)).toBeInTheDocument();
-    expect(screen.getByText(/and a touch of jQuery./i)).toBeInTheDocument();
+    expect(screen.getByText(/Software Engineer dedicated to/i)).toBeInTheDocument();
+    expect(screen.getByText(/learning new technologies/i)).toBeInTheDocument();
+    expect(screen.getByText(/and improving every day/i)).toBeInTheDocument();
   });
 
   test('renders code snippet elements', () => {

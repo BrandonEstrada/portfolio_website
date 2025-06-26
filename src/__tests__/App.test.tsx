@@ -15,7 +15,7 @@ global.fetch = jest.fn();
 
 test('renders portfolio app', () => {
   render(<App />);
-  const heroElement = screen.getByText(/coder/i);
+  const heroElement = screen.getByText('Brandon Estrada');
   expect(heroElement).toBeInTheDocument();
 });
 

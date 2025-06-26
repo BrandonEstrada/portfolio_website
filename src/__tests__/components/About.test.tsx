@@ -14,7 +14,7 @@ describe('About', () => {
     render(<About />);
     
     expect(screen.getByText('My Story')).toBeInTheDocument();
-    expect(screen.getByText(/I'm a passionate front-end developer/i)).toBeInTheDocument();
+    expect(screen.getByText(/I'm a passionate full-stack developer/i)).toBeInTheDocument();
   });
 
   test('renders technical skills section', () => {
@@ -22,8 +22,8 @@ describe('About', () => {
     
     expect(screen.getByText('Technical Skills')).toBeInTheDocument();
     expect(screen.getByText('Frontend')).toBeInTheDocument();
+    expect(screen.getByText('Backend')).toBeInTheDocument();
     expect(screen.getByText('Tools & Technologies')).toBeInTheDocument();
-    expect(screen.getByText('Design')).toBeInTheDocument();
   });
 
   test('renders frontend skills', () => {
@@ -32,23 +32,22 @@ describe('About', () => {
     expect(screen.getByText('React & TypeScript')).toBeInTheDocument();
     expect(screen.getByText('HTML5 & CSS3')).toBeInTheDocument();
     expect(screen.getByText('JavaScript (ES6+)')).toBeInTheDocument();
-    expect(screen.getByText('Responsive Design')).toBeInTheDocument();
   });
 
   test('renders experience section', () => {
     render(<About />);
     
     expect(screen.getByText('Experience')).toBeInTheDocument();
-    expect(screen.getByText('Frontend Developer')).toBeInTheDocument();
-    expect(screen.getByText('Web Developer')).toBeInTheDocument();
-    expect(screen.getByText('Junior Developer')).toBeInTheDocument();
+    expect(screen.getByText('Software Engineer')).toBeInTheDocument();
+    expect(screen.getByText('Frontend developer - intern')).toBeInTheDocument();
+    expect(screen.getByText('Full Stack Developer')).toBeInTheDocument();
   });
 
   test('renders experience details', () => {
     render(<About />);
     
-    expect(screen.getByText('Tech Company • 2022 - Present')).toBeInTheDocument();
-    expect(screen.getByText('Digital Agency • 2021 - 2022')).toBeInTheDocument();
-    expect(screen.getByText('Startup • 2020 - 2021')).toBeInTheDocument();
+    expect(screen.getByText('Hilton • 2024 - Present')).toBeInTheDocument();
+    expect(screen.getByText('Hilton • 2022 - 2024')).toBeInTheDocument();
+    expect(screen.getByText('Kudo Care Medical• 2021 - 2023')).toBeInTheDocument();
   });
 });
