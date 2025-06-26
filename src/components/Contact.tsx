@@ -68,8 +68,7 @@ const Contact: React.FC = () => {
           <div className="contact-info">
             <h2>Let's Connect</h2>
             <p>
-              I'm always interested in hearing about new opportunities, whether that's a 
-              freelance project, full-time role, or just a chat about web development.
+              I'm always open to connecting about new opportunities, projects, or development discussions.
             </p>
 
             <div className="contact-methods">

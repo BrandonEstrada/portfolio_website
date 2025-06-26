@@ -14,12 +14,11 @@ const Hero: React.FC = () => {
         />
       </div>
       <div className="hero-text">
-        <h1>&lt;coder&gt;</h1>
+        <h1>Brandon Estrada</h1>
         <p className="description">
-          Front End Developer who focuses on<br />
-          writing clean, elegant and efficient<br />
-          code. Love HTML5, CSS3, WordPress<br />
-          and a touch of jQuery.
+          Software Engineer dedicated to <br />
+            learning new technologies <br />
+            and improving every day.<br />
         </p>
         <div className="code-snippet">
           <span className="code-line">&lt;html&gt;</span>

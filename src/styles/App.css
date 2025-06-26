@@ -469,7 +469,7 @@
   
   .hero-section {
     min-height: 100vh;
-    height: 100vh;
+    height: auto;
     padding: 120px 20px 30px;
     box-sizing: border-box;
   }
@@ -523,7 +523,7 @@
   
   .hero-section {
     min-height: 100vh;
-    height: 100vh;
+    height: auto;
     padding: 130px 15px 30px;
     box-sizing: border-box;
   }
@@ -609,11 +609,11 @@
   }
   
   .profile-image::before {
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    border-radius: 15px;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
   }
   
   .profile-image img {

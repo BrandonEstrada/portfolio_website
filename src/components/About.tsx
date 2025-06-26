@@ -13,18 +13,16 @@ const About: React.FC = () => {
           <div className="about-text">
             <h2>My Story</h2>
             <p>
-              I'm a passionate front-end developer who loves creating clean, elegant, and efficient web applications. 
-              With a strong foundation in modern web technologies, I focus on building user experiences that are 
-              both beautiful and functional.
+              I'm a passionate full-stack developer with a strong focus on backend development, where I've spent
+              the majority of my professional experience building server-side solutions and APIs.
             </p>
             <p>
-              My journey in web development started with a curiosity about how websites work, and it has evolved 
-              into a deep appreciation for the craft of coding. I believe in writing code that is not only 
-              functional but also maintainable and scalable.
+              My software engineering journey began with a simple "Hello World" program and has evolved into
+              a pursuit of creating systems that balance performance, maintainability, and user experience.
             </p>
             <p>
-              When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
-              or sharing knowledge with the developer community.
+              When I'm not coding, you can find me exploring new technologies, attending tech conferences,
+              or enjoying a good run.
             </p>
           </div>
           

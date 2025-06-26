@@ -116,32 +116,6 @@ const Featured: React.FC = () => {
             </div>
           </div>
         </div>
-
-        <div className="achievements-section">
-          <h2>Recognition & Achievements</h2>
-          <div className="achievements-grid">
-            <div className="achievement-item">
-              <div className="achievement-icon">🏆</div>
-              <h3>Best Frontend Project</h3>
-              <p>Local Developer Meetup 2023</p>
-            </div>
-            <div className="achievement-item">
-              <div className="achievement-icon">⭐</div>
-              <h3>Open Source Contributor</h3>
-              <p>500+ commits to various projects</p>
-            </div>
-            <div className="achievement-item">
-              <div className="achievement-icon">🎯</div>
-              <h3>Client Satisfaction</h3>
-              <p>98% positive feedback rate</p>
-            </div>
-            <div className="achievement-item">
-              <div className="achievement-icon">🚀</div>
-              <h3>Performance Optimization</h3>
-              <p>Improved site speeds by 40%+</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
