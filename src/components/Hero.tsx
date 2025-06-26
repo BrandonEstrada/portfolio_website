@@ -25,9 +25,14 @@ const Hero: React.FC = () => {
           transition: 'transform 0.2s ease-out'
         }}
       >
-        <img src="/profile.jpg" alt="Brandon Estrada - Profile" onError={(e) => {
-          e.currentTarget.src = "https://via.placeholder.com/400x500/333/fff?text=Add+profile.jpg+to+public+folder";
-        }} />
+        <img 
+          src="/profile.jpg" 
+          alt="Brandon Estrada - Profile" 
+          onError={(e) => {
+            // Fallback to a more professional placeholder
+            e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face";
+          }} 
+        />
       </div>
       <div className="hero-text">
         <h1>&lt;coder&gt;</h1>
