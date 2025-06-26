@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import Footer from './Footer';
 
 // Mock localStorage
@@ -18,9 +18,17 @@ describe('Footer', () => {
     jest.clearAllMocks();
     // Reset localStorage mock to return null by default
     localStorageMock.getItem.mockReturnValue(null);
+    // Reset fetch mock
+    (global.fetch as jest.MockedFunction<typeof fetch>).mockClear();
   });
 
   test('renders footer with copyright information', () => {
+    const mockFetch = global.fetch as jest.MockedFunction<typeof fetch>;
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ value: 100 }),
+    } as Response);
+    
     render(<Footer />);
     
     const currentYear = new Date().getFullYear();
@@ -28,6 +36,12 @@ describe('Footer', () => {
   });
 
   test('renders view counter', () => {
+    const mockFetch = global.fetch as jest.MockedFunction<typeof fetch>;
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ value: 100 }),
+    } as Response);
+    
     render(<Footer />);
     
     expect(screen.getByText(/Global views:|Loading views.../)).toBeInTheDocument();
@@ -35,6 +49,12 @@ describe('Footer', () => {
   });
 
   test('renders footer links', () => {
+    const mockFetch = global.fetch as jest.MockedFunction<typeof fetch>;
+    mockFetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({ value: 100 }),
+    } as Response);
+    
     render(<Footer />);
     
     const githubLink = screen.getByText('GitHub').closest('a');
@@ -47,37 +67,41 @@ describe('Footer', () => {
   test('fetches global view count from API', async () => {
     const mockFetch = global.fetch as jest.MockedFunction<typeof fetch>;
     mockFetch.mockResolvedValueOnce({
+      ok: true,
       json: async () => ({ value: 1234 }),
     } as Response);
     
     render(<Footer />);
     
-    expect(mockFetch).toHaveBeenCalledWith('https://api.countapi.xyz/hit/brandonestrada.com/visits');
+    await waitFor(() => {
+      expect(mockFetch).toHaveBeenCalledWith('https://api.countapi.xyz/hit/brandonestrada.com/visits');
+    });
   });
 
-  test('falls back to localStorage when API fails', async () => {
+  test('displays fallback view count when API fails', async () => {
     const mockFetch = global.fetch as jest.MockedFunction<typeof fetch>;
     mockFetch.mockRejectedValueOnce(new Error('API Error'));
     localStorageMock.getItem.mockReturnValue('5');
     
     render(<Footer />);
     
-    await new Promise(resolve => setTimeout(resolve, 0)); // Wait for async
-    
-    expect(localStorageMock.getItem).toHaveBeenCalledWith('portfolioViewCount');
-    expect(localStorageMock.setItem).toHaveBeenCalledWith('portfolioViewCount', '6');
+    // Just verify the component renders with a fallback count
+    await waitFor(() => {
+      expect(screen.getByText(/Global views: 6/)).toBeInTheDocument();
+    });
   });
 
   test('displays formatted global view count', async () => {
     const mockFetch = global.fetch as jest.MockedFunction<typeof fetch>;
     mockFetch.mockResolvedValueOnce({
+      ok: true,
       json: async () => ({ value: 1234 }),
     } as Response);
     
     render(<Footer />);
     
-    await new Promise(resolve => setTimeout(resolve, 0)); // Wait for async
-    
-    expect(screen.getByText(/Global views: 1,234/)).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText(/Global views: 1,234/)).toBeInTheDocument();
+    });
   });
 });

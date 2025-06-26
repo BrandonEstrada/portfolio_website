@@ -51,7 +51,9 @@ describe('Hero', () => {
     Object.defineProperty(window, 'scrollY', { value: 100, writable: true });
     fireEvent.scroll(window);
     
-    // Check that transform style is applied (just check that it exists)
-    expect(profileImage).toHaveStyle(expect.stringContaining('transform: translateX('));
+    // Check that transform style is applied by checking the style attribute
+    expect(profileImage).toHaveAttribute('style');
+    const style = profileImage?.getAttribute('style');
+    expect(style).toMatch(/transform.*translateX/);
   });
 });
