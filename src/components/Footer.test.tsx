@@ -10,6 +10,9 @@ const localStorageMock = {
 };
 global.localStorage = localStorageMock as any;
 
+// Mock fetch for CountAPI
+global.fetch = jest.fn();
+
 describe('Footer', () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -27,7 +30,7 @@ describe('Footer', () => {
   test('renders view counter', () => {
     render(<Footer />);
     
-    expect(screen.getByText(/Page views:/)).toBeInTheDocument();
+    expect(screen.getByText(/Global views:|Loading views.../)).toBeInTheDocument();
     expect(screen.getByText('👁️')).toBeInTheDocument();
   });
 
@@ -41,28 +44,40 @@ describe('Footer', () => {
     expect(linkedinLink).toHaveAttribute('href', 'https://linkedin.com/in/brandonestrada');
   });
 
-  test('increments view count on component mount', () => {
+  test('fetches global view count from API', async () => {
+    const mockFetch = global.fetch as jest.MockedFunction<typeof fetch>;
+    mockFetch.mockResolvedValueOnce({
+      json: async () => ({ value: 1234 }),
+    } as Response);
+    
+    render(<Footer />);
+    
+    expect(mockFetch).toHaveBeenCalledWith('https://api.countapi.xyz/hit/brandonestrada.com/visits');
+  });
+
+  test('falls back to localStorage when API fails', async () => {
+    const mockFetch = global.fetch as jest.MockedFunction<typeof fetch>;
+    mockFetch.mockRejectedValueOnce(new Error('API Error'));
     localStorageMock.getItem.mockReturnValue('5');
     
     render(<Footer />);
+    
+    await new Promise(resolve => setTimeout(resolve, 0)); // Wait for async
     
     expect(localStorageMock.getItem).toHaveBeenCalledWith('portfolioViewCount');
     expect(localStorageMock.setItem).toHaveBeenCalledWith('portfolioViewCount', '6');
   });
 
-  test('initializes view count when localStorage is empty', () => {
-    localStorageMock.getItem.mockReturnValue(null);
+  test('displays formatted global view count', async () => {
+    const mockFetch = global.fetch as jest.MockedFunction<typeof fetch>;
+    mockFetch.mockResolvedValueOnce({
+      json: async () => ({ value: 1234 }),
+    } as Response);
     
     render(<Footer />);
     
-    expect(localStorageMock.setItem).toHaveBeenCalledWith('portfolioViewCount', '1');
-  });
-
-  test('displays formatted view count', () => {
-    localStorageMock.getItem.mockReturnValue('1234');
+    await new Promise(resolve => setTimeout(resolve, 0)); // Wait for async
     
-    render(<Footer />);
-    
-    expect(screen.getByText(/Page views: 1,235/)).toBeInTheDocument();
+    expect(screen.getByText(/Global views: 1,234/)).toBeInTheDocument();
   });
 });

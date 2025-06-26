@@ -289,12 +289,12 @@
 .profile-image img {
   width: 400px;
   height: 500px;
-  object-fit: cover;
-  object-position: center;
   border-radius: 15px;
   filter: none;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .profile-image:hover img {
@@ -406,8 +406,6 @@
   .profile-image img {
     width: 320px;
     height: 400px;
-    object-fit: cover;
-    object-position: center;
   }
   
   .hero-text {
@@ -483,8 +481,6 @@
   .profile-image img {
     width: 280px;
     height: 350px;
-    object-fit: cover;
-    object-position: center;
   }
   
   .hero-text {
@@ -537,8 +533,6 @@
   .profile-image img {
     width: 240px;
     height: 300px;
-    object-fit: cover;
-    object-position: center;
   }
   
   .hero-text {
@@ -574,8 +568,6 @@
   .profile-image img {
     width: 200px;
     height: 250px;
-    object-fit: cover;
-    object-position: center;
   }
   
   .hero-text h1 {

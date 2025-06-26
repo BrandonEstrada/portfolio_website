@@ -10,6 +10,9 @@ const localStorageMock = {
 };
 global.localStorage = localStorageMock as any;
 
+// Mock fetch for global counter
+global.fetch = jest.fn();
+
 test('renders portfolio app', () => {
   render(<App />);
   const heroElement = screen.getByText(/coder/i);
@@ -18,7 +21,7 @@ test('renders portfolio app', () => {
 
 test('renders footer with view counter', () => {
   render(<App />);
-  expect(screen.getByText(/Page views:/)).toBeInTheDocument();
+  expect(screen.getByText(/Global views:|Loading views.../)).toBeInTheDocument();
   const currentYear = new Date().getFullYear();
   expect(screen.getByText(`© ${currentYear} Brandon Estrada. All rights reserved.`)).toBeInTheDocument();
 });
