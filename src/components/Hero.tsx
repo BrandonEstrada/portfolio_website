@@ -1,30 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const Hero: React.FC = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Calculate horizontal movement based on scroll position
-  // More noticeable movement: larger range and smoother motion
-  const horizontalOffset = Math.sin(scrollY * 0.003) * 50; // Increased from 20 to 50 for more noticeable movement
-
   return (
     <div className="hero-content">
-      <div 
-        className="profile-image"
-        style={{
-          transform: `translateX(${horizontalOffset}px)`,
-          transition: 'transform 0.2s ease-out'
-        }}
-      >
+      <div className="profile-image">
         <img 
           src="/profile.jpg" 
           alt="Brandon Estrada - Profile" 

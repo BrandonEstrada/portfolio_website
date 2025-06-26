@@ -42,18 +42,4 @@ describe('Hero', () => {
     expect(screen.getByText('jQuery')).toBeInTheDocument();
   });
 
-  test('image moves based on scroll position', () => {
-    render(<Hero />);
-    
-    const profileImage = screen.getByAltText('Brandon Estrada - Profile').closest('.profile-image');
-    
-    // Simulate scroll event
-    Object.defineProperty(window, 'scrollY', { value: 100, writable: true });
-    fireEvent.scroll(window);
-    
-    // Check that transform style is applied by checking the style attribute
-    expect(profileImage).toHaveAttribute('style');
-    const style = profileImage?.getAttribute('style');
-    expect(style).toMatch(/transform.*translateX/);
-  });
 });
