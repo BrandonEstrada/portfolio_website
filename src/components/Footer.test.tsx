@@ -63,6 +63,6 @@ describe('Footer', () => {
     
     render(<Footer />);
     
-    expect(screen.getByText('Page views: 1,235')).toBeInTheDocument();
+    expect(screen.getByText(/Page views: 1,235/)).toBeInTheDocument();
   });
 });

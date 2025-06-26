@@ -13,19 +13,19 @@ const Hero: React.FC = () => {
   }, []);
 
   // Calculate horizontal movement based on scroll position
-  // Move right when scrolling down, left when scrolling up
-  const horizontalOffset = Math.sin(scrollY * 0.002) * 20; // Adjust multiplier for speed/distance
+  // More noticeable movement: larger range and smoother motion
+  const horizontalOffset = Math.sin(scrollY * 0.003) * 50; // Increased from 20 to 50 for more noticeable movement
 
   return (
     <div className="hero-content">
       <div 
-        className="profile-emoji"
+        className="profile-image"
         style={{
           transform: `translateX(${horizontalOffset}px)`,
-          transition: 'transform 0.1s ease-out'
+          transition: 'transform 0.2s ease-out'
         }}
       >
-        <span className="emoji" role="img" aria-label="Brandon's Profile">👨🏽‍💻</span>
+        <img src="https://via.placeholder.com/400x500/333/fff?text=Your+Photo" alt="Profile" />
       </div>
       <div className="hero-text">
         <h1>&lt;coder&gt;</h1>

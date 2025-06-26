@@ -19,10 +19,12 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-info">
-          <p>&copy; {currentYear} Brandon Estrada. All rights reserved.</p>
-          <p className="view-counter">
-            <span className="view-icon">👁️</span>
-            Page views: {viewCount.toLocaleString()}
+          <p>
+            &copy; {currentYear} Brandon Estrada. All rights reserved.
+            <span className="view-counter">
+              <span className="view-icon">👁️</span>
+              Page views: {viewCount.toLocaleString()}
+            </span>
           </p>
         </div>
         <div className="footer-links">
