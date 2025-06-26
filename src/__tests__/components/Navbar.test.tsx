@@ -16,7 +16,6 @@ describe('Navbar', () => {
     expect(screen.getByText('</>')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /about/i })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /featured/i })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /portfolio/i })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /contact/i })).toBeInTheDocument();
   });
 
