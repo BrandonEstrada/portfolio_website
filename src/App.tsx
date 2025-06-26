@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Featured from './components/Featured';
-import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './styles/App.css';
@@ -19,11 +18,8 @@ function App() {
         <section id="about" className="section about-section">
           <About />
         </section>
-        <section id="featured" className="section featured-section">
+        <section id="featured" className="section portfolio-section">
           <Featured />
-        </section>
-        <section id="portfolio" className="section portfolio-section">
-          <Portfolio />
         </section>
         <section id="contact" className="section contact-section">
           <Contact />

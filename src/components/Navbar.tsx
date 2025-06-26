@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          const sections = ['home', 'about', 'featured', 'portfolio', 'contact'];
+          const sections = ['home', 'about', 'featured', 'contact'];
           const scrollPosition = window.scrollY + 100;
 
           for (const section of sections) {
@@ -77,14 +77,6 @@ const Navbar: React.FC = () => {
             className={activeSection === 'featured' ? 'active' : ''}
           >
             featured
-          </button>
-        </li>
-        <li>
-          <button 
-            onClick={() => scrollToSection('portfolio')} 
-            className={activeSection === 'portfolio' ? 'active' : ''}
-          >
-            portfolio
           </button>
         </li>
         <li>
