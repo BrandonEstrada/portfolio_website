@@ -1,0 +1,11 @@
+This is a placeholder file. Please replace this with your mountain profile image.
+
+Instructions:
+1. Save your profile image as 'profile.jpg' in the public folder
+2. Or rename your image to 'profile.jpg' and place it in /public/
+3. The image will automatically be used in the Hero section
+
+Recommended specifications:
+- Format: JPG or PNG
+- Aspect ratio: 4:5 (400px wide x 500px tall works well)
+- File size: Under 1MB for fast loading

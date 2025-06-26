@@ -18,9 +18,9 @@ describe('Hero', () => {
   test('renders profile image with alt text', () => {
     render(<Hero />);
     
-    const profileImage = screen.getByAltText('Profile');
+    const profileImage = screen.getByAltText('Brandon Estrada - Profile');
     expect(profileImage).toBeInTheDocument();
-    expect(profileImage).toHaveAttribute('src', expect.stringContaining('placeholder'));
+    expect(profileImage).toHaveAttribute('src', '/profile.jpg');
   });
 
   test('renders description text', () => {
@@ -45,7 +45,7 @@ describe('Hero', () => {
   test('image moves based on scroll position', () => {
     render(<Hero />);
     
-    const profileImage = screen.getByAltText('Profile').closest('.profile-image');
+    const profileImage = screen.getByAltText('Brandon Estrada - Profile').closest('.profile-image');
     
     // Simulate scroll event
     Object.defineProperty(window, 'scrollY', { value: 100, writable: true });

@@ -25,7 +25,9 @@ const Hero: React.FC = () => {
           transition: 'transform 0.2s ease-out'
         }}
       >
-        <img src="https://via.placeholder.com/400x500/333/fff?text=Your+Photo" alt="Profile" />
+        <img src="/profile.jpg" alt="Brandon Estrada - Profile" onError={(e) => {
+          e.currentTarget.src = "https://via.placeholder.com/400x500/333/fff?text=Add+profile.jpg+to+public+folder";
+        }} />
       </div>
       <div className="hero-text">
         <h1>&lt;coder&gt;</h1>
