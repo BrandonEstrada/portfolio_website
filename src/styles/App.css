@@ -478,6 +478,10 @@
     margin: 10px;
   }
   
+  .profile-image {
+    margin: 10px 0;
+  }
+
   .profile-image img {
     width: 260px;
     height: 330px;
@@ -520,16 +524,20 @@
   .hero-section {
     min-height: 100vh;
     height: 100vh;
-    padding: 140px 15px 20px;
+    padding: 130px 15px 30px;
     box-sizing: border-box;
   }
   
   .hero-content {
-    gap: 25px;
-    max-height: calc(100vh - 160px);
-    overflow: hidden;
+    gap: 20px;
+    max-height: calc(100vh - 180px);
+    overflow: visible;
   }
   
+  .profile-image {
+    margin: 15px 0;
+  }
+
   .profile-image img {
     width: 220px;
     height: 280px;
